@@ -20,9 +20,9 @@ class UserNotifier extends StateNotifier<UserState>{
 
     try {
 
-      UserModel newsModel = await userRepo.getAllUserPosts();
-      print("${UserModel}");
-      state = state.copyWith(userStatus: UserStatus.loaded, newsModel: newsModel);
+      UserModel userModel = await userRepo.getAllUserPosts();
+      print("${userModel}");
+      state = state.copyWith(userStatus: UserStatus.loaded, userModel: userModel);
     } catch (e) {
       state = state.copyWith(userStatus: UserStatus.error, error: e.toString());
     }

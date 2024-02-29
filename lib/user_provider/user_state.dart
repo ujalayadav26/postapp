@@ -22,17 +22,20 @@ class UserState {
   factory UserState.intial(){
     return UserState(userStatus: UserStatus.initial,userModel: null,error: "");
   }
-  ///
+
   UserState copyWith({
-    UserStatus? newsStatus,
-    UserModel? newsModel,
-    String? error, required UserStatus userStatus,
+    UserStatus? userStatus,
+    UserModel? userModel,
+    String? error,
   }) {
     return UserState(
-      userStatus: newsStatus ?? this.userStatus,
-      userModel: newsModel ?? this.userModel,
+      userStatus: userStatus ?? this.userStatus,
+      userModel: userModel ?? this.userModel,
       error: error ?? this.error,
     );
   }
-  
+
+  ///
+
 }
+
